@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.0
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/interTwin-eu/DetectorSim-3DGAN:
       branch: main
@@ -15,28 +15,54 @@ sqa_criteria:
     repos:
       github.com/interTwin-eu/DetectorSim-3DGAN git:
         commands:
-        - /usr/bin/env sh .sqa/script.freaky-yellow-caracal.sh
-        container: qc.acc_goopy-fuchsia-falcon
+        - /usr/bin/env sh .sqa/script.freaky-violet-catfish.sh
+        container: qc.acc_scummy-aquamarine-angelfish
   QC.Doc:
     repos:
       github.com/interTwin-eu/DetectorSim-3DGAN find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.shaky-rose-mole.sh
-        container: qc.doc_baggy-brass-sparrow
+        - /usr/bin/env sh .sqa/script.bluesy-zucchini-dhole.sh
+        container: qc.doc_scummy-cream-bracke
       github.com/interTwin-eu/DetectorSim-3DGAN git:
         commands:
-        - /usr/bin/env sh .sqa/script.crappy-scarlet-binturong.sh
-        container: qc.doc_clammy-saffron-numbat
+        - /usr/bin/env sh .sqa/script.skimpy-heliotrope-yak.sh
+        container: qc.doc_cranky-xanthic-abyssinian
+      github.com/interTwin-eu/DetectorSim-3DGAN markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.lousy-teal-dogfish.sh
+        container: qc.doc_nippy-seashell-frigatebird
   QC.Lic:
     repos:
       github.com/interTwin-eu/DetectorSim-3DGAN licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-dandelion-hyrax.sh
-        container: qc.lic_tacky-cardinal-frigatebird
+        - /usr/bin/env sh .sqa/script.skimpy-khaki-fossa.sh
+        container: qc.lic_snappy-violet-mole
+  QC.Sec:
+    repos:
+      github.com/interTwin-eu/DetectorSim-3DGAN bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.homey-bronze-reindeer.sh
+        container: qc.sec_skinny-buff-hummingbird
+  QC.Sty:
+    repos:
+      github.com/interTwin-eu/DetectorSim-3DGAN flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-cerulean-quokka.sh
+        container: qc.sty_goopy-buff-greyhound
+      github.com/interTwin-eu/DetectorSim-3DGAN jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.chummy-sepia-wolverine.sh
+        container: qc.sty_crabby-burgundy-civet
+  QC.Uni:
+    repos:
+      github.com/interTwin-eu/DetectorSim-3DGAN pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-orange-spider.sh
+        container: qc.uni_muggy-copper-coral
   QC.Ver:
     repos:
       github.com/interTwin-eu/DetectorSim-3DGAN get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.droopy-beige-balinese.sh
-        container: qc.ver_freaky-lemon-spitz
+        - /usr/bin/env sh .sqa/script.flimsy-persimmon-ladybird.sh
+        container: qc.ver_stinky-flax-liger
 timeout: 5400
